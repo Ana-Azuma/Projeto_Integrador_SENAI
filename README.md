@@ -1,5 +1,5 @@
 # Projeto_Integrador_SENAI
-# Projeto desenvolvido por: Ana Azuma e Willian Jeronimo do curso Tecnólogo em Análise e Desenvolvimento de Sistemas da Escola e Faculdade SENAI Roberto Mange Campinas.
+# Projeto desenvolvido por: Ana Azuma e Willian Jeronimo do curso Tecnólogo em Análise e Desenvolvimento de Sistemas da Faculdade SENAI Roberto Mange Campinas.
 
 Instruções
 PR-36-PROPOSTA DE UM SISTEMA WEB DE CONTROLE DE ENTRADA E
