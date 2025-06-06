@@ -17,9 +17,8 @@ var historico = [
     { data: new Date().toISOString(), produtoId: 2, produtoNome: 'Lixadeira', operacao: 'adicionar', quantidade: 5, usuario: 'Admin' }
 ];
 
-// Nova variável para solicitações de retirada pendentes
-var solicitacoesRetirada = [];
 
+var solicitacoesRetirada = [];
 var usuarioLogado = null;
 var charts = {};
 var produtoSelecionado = null;
@@ -1407,7 +1406,7 @@ function exportarExcel() {
     }
 }
 
-// === HISTÓRICO DETALHADO COM FILTROS CORRIGIDOS ===
+// === HISTÓRICO DETALHADO COM FILTROS ===
 function mostrarHistorico() {
     if (historico.length === 0) {
         mostrarAlerta('Nenhum histórico encontrado. Realize algumas operações primeiro.', 'info');
@@ -1435,14 +1434,8 @@ function mostrarHistorico() {
         var data = new Date(h.data);
         var dataFormatada = data.toLocaleDateString('pt-BR');
         var horaFormatada = data.toLocaleTimeString('pt-BR');
-        
-        // Mapear operações para descrições mais claras
         var operacaoInfo = getOperacaoInfo(h.operacao, h.quantidade);
-        
-        // Determinar cor da linha baseada na operação
         var rowClass = getRowClass(h.operacao);
-        
-        // Criar detalhes específicos para cada tipo de operação
         var detalhes = getDetalhesOperacao(h);
         
         tabelaHtml += `
@@ -1536,7 +1529,7 @@ function mostrarHistorico() {
     
     document.body.insertAdjacentHTML('beforeend', modalHtml);
     
-    // Configurar filtros CORRIGIDOS
+    
     setTimeout(() => {
         configurarFiltrosHistorico();
     }, 100);
@@ -1656,7 +1649,7 @@ function getTempoDecorrido(data) {
     return 'agora mesmo';
 }
 
-// === FILTROS CORRIGIDOS ===
+
 function configurarFiltrosHistorico() {
     var filtroOperacao = document.getElementById('filtro-operacao');
     var filtroUsuario = document.getElementById('filtro-usuario');
